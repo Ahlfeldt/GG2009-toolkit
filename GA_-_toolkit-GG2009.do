@@ -24,17 +24,17 @@ program define GG // Syntax: 1 change in ln A_c 2 change in ln B_c 3 change in l
 	gen dlnL = dlnL
 	local dlnL = dlnL
 	label var dlnL "log change in employment"
-	scalar dlnw = eta*(delta-1)*`1' - eta*(1-alpha-beta)*(`2'+sigma*(delta-1)*`3')
+	scalar dlnw = sigma*eta*(delta-1)*`1' - eta*(1-alpha-beta)*(delta*`2'+sigma*(delta-1)*`3') // sigma added in front of the first term so that change in A keeps real wage constant
 	gen dlnw = dlnw
 	local dlnw = dlnw
 	label var dlnw "log change in wage"
 	scalar dlnP = (delta-1)*eta*(`1' + alpha*`2' - (1-alpha-beta)*`3')
 	gen dlnP = dlnP
-	local dlnP = dlnw
+	local dlnP = dlnP
 	label var dlnP "log change in rent"
 	display "log change in employment = `dlnL'"
 	display "log change in wage = `dlnw'"
-	display "log change in ren = `dlnP'"
+	display "log change in rent = `dlnP'"
 	local dlnRealWage = round(dlnw - sigma*dlnP, 0.01)
 	graph bar dlnL  dlnw dlnP, legend(position(12) cols(3) order(1 "Employment" 2 "Wage" 3 "Rent" )) ytitle("log change") note("Effect on real wage is `dlnRealWage' log units." "The is the result of changing:" "Fundamental productivity by `1' log units" "Quality of life by `2' log units"  "Effective land supply by `2' log units") yline(0) 
 end
@@ -42,7 +42,8 @@ end
 
 *** Now can play around doing counterfactuals
 
-GG 0  0.1 0		// Increase quality of life
-GG 0  0.1 0.5	// Increase quality of life and housing supply
-GG 0.1 0.1 0.1  // Increase productivity, quality of life, and housing supply at same rate
+GG 0.1  0 0		// Increase productivity, does not affect real wage
+GG 0  0.1 0		// Increase quality of life, one-to-one offset by real wage
+GG 0 0 0.1  	// Increase effective land supply, does not affect real wage
+GG 0.1 0.1 0.1  // Increase them all at the same time
  
