@@ -5,7 +5,7 @@
 ********************************************************************************
 
 * Set parameter values
-scalar lde = -0.2						// Labour demand elasticity
+scalar lde = -0.2						// Inverse labour demand elasticity
 scalar alpha = 0.66 					// labour share
 scalar beta = (-alpha+lde+1)/(lde+1)	// capital share implictly determined
 scalar list beta
