@@ -4,7 +4,7 @@ Toolkit for simple counterfactuals based on a spatial equilibrium framework in t
 
 (c) Gabriel M. Ahlfeldt 
 
-Verion 0.9, 2024-02
+Version 0.9, 2024-02
 
 General remarks: 
 
