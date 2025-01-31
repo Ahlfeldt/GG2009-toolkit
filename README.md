@@ -14,4 +14,4 @@ All programs have been written using Stata 18. However, the code should also run
 
 **A web-version of the toolkit** (java) is accessible [**here**](https://sites.google.com/view/ahlfeldt/toolkits-and-webtools/glaeser-gottlieb-2009-toolkit). You may embed this URL on your website. 
 
-Glaeser, E., J. Gottlieb (2009): The Wealth of Cities: Agglomeration Economies and Spatial Equilibrium in the United States. Journal of Economic Literature 2009, 47(4). http:www.aeaweb.org/articles.php?doi=10.1257/jel.47.4.983
+Glaeser, E., J. Gottlieb (2009): The Wealth of Cities: Agglomeration Economies and Spatial Equilibrium in the United States. [Journal of Economic Literature 2009, 47(4)](https://www.aeaweb.org/articles?id=10.1257/jel.47.4.983).
